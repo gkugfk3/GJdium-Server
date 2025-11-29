@@ -155,7 +155,7 @@ wss.on('connection', (ws) => {
 			ServerLog("[INFO]","name="+players[ws.playerId].name + " id=" + data.playerId + " : " + data.message);
 			broadcast({ type: 'chat', playerId: data.playerId, name: players[data.playerId].name, message: data.message });
 
-			if(data.message=="FREE COINS")
+			/*if(data.message=="FREE COINS")
 			{
 				let coinlevel="";
 				let X = 50; // HOW MANY COIN
@@ -169,7 +169,7 @@ wss.on('connection', (ws) => {
 					ldata: coinlevel
 				}));
 				ws.send(JSON.stringify({ type: 'chat', playerId: 0, name: "SYSTEM", message:"chat '!return' to go back to the main level" }));
-			}
+			}*/
 
 			if(data.message=="!return")
 			{
