@@ -33,9 +33,10 @@ try {
 // === Players ===
 const players = {};
 
-// Generate a random 8-character ID
+// rewrote id generation
 function genId() {
-    return crypto.randomBytes(4).toString("hex");
+    const buf = crypto.randomBytes(6);
+    return parseInt(buf.toString("hex"),16);
 }
 
 // === Helpers ===
